@@ -17,14 +17,20 @@
         <button commandfor="my-dialog" command="close">Close</button>
     </dialog> -->
 
+    <!-- Main Frame -->
     <div class="main-frame">
-        <h1 class="main-title">Book Collection</h1>
-        <button class="btn-new-book" command="show-modal" commandfor="new-book">New Book</button>
-        <div class="list-frame">
+        <div class="title-container">
+            <h1 class="main-title">Book Collection</h1>
+        </div>
+        <div class="newBtn-container">
+            <button class="btn-new-book" command="show-modal" commandfor="new-book">New Book</button>
+        </div>
+        <div class="list-container">
 
         </div>
     </div>
 
+    <!-- New Book Dialog -->
     <dialog id="new-book">
         <form action="submit" method="post">
             <div class="input-container">
