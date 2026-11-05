@@ -1,0 +1,69 @@
+/* --New Book Dialog Section-- */
+#new-book {
+    border: none;
+    border-radius: 8px;
+    padding: 24px;
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff;
+    box-shadow: 20px 13px 30px 10px rgba(0, 0, 0, 0.12);
+    margin: auto;
+}
+
+#new-book::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);
+}
+
+/* --Input Container Section-- */
+.input-container {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+}
+
+.input-container input {
+    width: 100%;
+    height: 56px;
+    padding: 0 14px;
+    font-size: 16px;
+    color: #202124;
+    border: 1px solid #dadce0;
+    border-radius: 4px;
+    outline: none;
+    background: transparent;
+    box-sizing: border-box;
+    transition: border-color 0.15s ease;
+}
+
+.input-container label {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffff;
+    padding: 0 4px;
+    color: #5f6368;
+    font-size: 16px;
+    font-family: Roboto, Arial, sans-serif;
+    transition: 0.15s ease-out;
+    pointer-events: none;
+}
+
+/* active border state */
+.input-container input:focus {
+    border: 2px solid #1a73e8;
+    padding: 0 13px;
+}
+
+/* label focus state color */
+.input-container input:focus ~ label {
+    color: #1a73e8;
+}
+
+/* float label position when input is focused or not empty */
+.input-container input:focus ~ label,
+.input-container input:not(:placeholder-shown) ~ label {
+    top: 0;
+    font-size: 12px;
+}
