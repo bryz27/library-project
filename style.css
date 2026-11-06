@@ -32,6 +32,12 @@
     backdrop-filter: blur(2px);
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 /* --Input Container Section-- */
 .input-container {
     position: relative;
@@ -50,7 +56,7 @@
     outline: none;
     background: transparent;
     box-sizing: border-box;
-    transition: border-color 0.15s ease;
+    transition: border-color 0.15s ease, border-width 0.1s ease;
 }
 
 .input-container label {
@@ -65,6 +71,10 @@
     font-family: Roboto, Arial, sans-serif;
     transition: 0.15s ease-out;
     pointer-events: none;
+    transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+        top 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+        font-size 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* active border state */
