@@ -2,11 +2,12 @@
     position: relative;
 }
 
+/* --Main Frame Section-- */
 .main-frame {
     position: absolute;
     width: 100%;
     max-width: 700px;
-    height: 50vh;
+    height: 80vh;
     border-radius: 35px;
     background: #ffffff;
     box-shadow: 20px 13px 30px 10px rgba(0, 0, 0, 0.12);
@@ -14,6 +15,46 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
+.main-frame .title-container {
+    display: flex;
+    justify-content: center;
+}
+
+.main-frame .title-container .main-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.main-frame .newBtn-container {
+    display: flex;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.main-frame .newBtn-container .btn-new-book {
+    height: 40px;
+    padding: 0 24px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.15s ease-in-out;
+    background-color: #3af72d;
+    border: none;
+    color: #ffffff;
+}
+
+.main-frame .newBtn-container .btn-new-book:hover {
+    background-color: #25eb2c;
+}
+
+.main-frame .newBtn-container .btn-new-book:active {
+    background-color: #30d81d;
+}
+
+
 
 /* --New Book Dialog Section-- */
 #new-book {
