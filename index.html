@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
     <title>Library Project</title>
@@ -61,7 +62,18 @@
             <h2 class="book-title"></h2>
             <p class="book-author"></p>
             <p class="book-pages"></p>
-            <p class="book-read"></p>
+            <div class="card-footer">
+                <span class="book-read"></span>
+                <div class="card-actions">
+                    <button type="button" class="btn-toggle-read" title="Toggle Read Status">
+                        <i class="ph ph-eye"></i>
+                    </button>
+                    <button type="button" class="btn-delete" title="Delete Book">
+                        <i class="ph ph-trash"></i>
+                    </button>
+                </div>
+            </div>
+
         </div>
     </template>
 </body>

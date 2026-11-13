@@ -327,3 +327,44 @@ form {
     background-color: #f3f4f6;
     color: #6b7280;
 }
+
+.book-card .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+.book-card .card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.book-card .card-actions button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #4b5563;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.book-card .card-actions .btn-toggle-read:hover {
+    background-color: #f0fdf4;
+    border-color: #bbf7d0;
+    color: #16a34a;
+}
+
+.book-card .card-actions .btn-delete:hover {
+    background-color: #fef2f2;
+    border-color: #fecaca;
+    color: #dc2626;
+}
