@@ -1,7 +1,12 @@
 const myLibrary = [];
 
-const closeBtn = document.querySelector('#btn-close');
-const newBookDialog = document.querySelector('#new-book');
+const closeBtn = document.getElementById('btn-close');
+const newBookDialog = document.getElementById('new-book');
+
+const txtTitle = document.getElementById('title');
+const txtAuthor = document.getElementById('author');
+const txtPages = document.getElementById('pages');
+const chkRead = document.getElementById('read');
 
 function Book(id, title, author, pages, read) {
     this.title = title;
