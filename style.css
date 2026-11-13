@@ -70,6 +70,10 @@
     flex: 1;
     overflow-y: auto;
     padding: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    align-content: start;
 }
 
 .list-container::-webkit-scrollbar {
@@ -259,4 +263,67 @@ form {
 
 #btn-submit:active {
     background-color: #1d4ed8;
+}
+
+/* --Book Card Design-- */
+.book-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.08);
+}
+
+.book-card .book-title {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #111827;
+    margin: 0 0 6px 0;
+    word-break: break-word;
+}
+
+.book-card .book-author {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0 0 12px 0;
+    font-style: italic;
+}
+
+.book-card .book-pages {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.85rem;
+    color: #4b5563;
+    margin: 0 0 14px 0;
+}
+
+.book-card .book-read {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.book-card .book-read.is-read {
+    background-color: #dcfce7;
+    color: #15803d;
+}
+
+.book-card .book-read.not-read {
+    background-color: #f3f4f6;
+    color: #6b7280;
 }
