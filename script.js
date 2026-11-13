@@ -11,6 +11,7 @@ const chkRead = document.getElementById('read');
 
 const listContainer = document.getElementsByClassName('list-container');
 const form = document.getElementById('form');
+const bookTemplate = document.getElementById('book-card-template');
 
 function Book(title, author, pages, read) {
     this.id = crypto.randomUUID();
@@ -26,9 +27,17 @@ function addBookToLibrary(book) {
 
 function displayBooks() {
     listContainer.replaceChildren();
-    for (let i = 0; i < myLibrary.length; i++) {
-        console.log(`Book ${i + 1}: ${myLibrary[i].title} by ${myLibrary[i].author}, ${myLibrary[i].pages} pages, Read: ${myLibrary[i].read}. ID: ${myLibrary[i].id}`);
-    }
+
+    myLibrary.forEach((book) => {
+        const cardNode = bookTemplate.content.cloneNode(true);
+
+        cardNode.querySelector('.book-title').textContent = book.title;
+        cardNode.querySelector('.book-author').textContent = `By ${book.author}`;
+        cardNode.querySelector('.book-pages').textContent = `${book.pages} pages`;
+        cardNode.querySelector('.book-read').textContent = book.read ? 'Status: Read' : 'Status: Not read yet';
+
+        listContainer.appendChild(cardNode);
+    });
 }
 
 closeBtn.addEventListener('click', (event) => {
@@ -36,7 +45,7 @@ closeBtn.addEventListener('click', (event) => {
     newBookDialog.close();
 });
 
-form.addEventListener('submit', (event)=>{
+form.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const newBook = new Book(
@@ -51,4 +60,4 @@ form.addEventListener('submit', (event)=>{
 
     form.reset();
     newBookDialog.close()
-})
+});
