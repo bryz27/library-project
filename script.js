@@ -8,6 +8,8 @@ const txtAuthor = document.getElementById('author');
 const txtPages = document.getElementById('pages');
 const chkRead = document.getElementById('read');
 
+const listContainer = document.getElementsByClassName('list-container');
+
 function Book(id, title, author, pages, read) {
     this.title = title;
     this.author = author;
@@ -22,6 +24,7 @@ function addBookToLibrary(book) {
 }
 
 function displayBooks() {
+    listContainer.replaceChildren();
     for (let i = 0; i < myLibrary.length; i++) {
         console.log(`Book ${i + 1}: ${myLibrary[i].title} by ${myLibrary[i].author}, ${myLibrary[i].pages} pages, Read: ${myLibrary[i].read}. ID: ${myLibrary[i].id}`);
     }
