@@ -2,6 +2,7 @@ const myLibrary = [];
 
 const closeBtn = document.getElementById('btn-close');
 const newBookDialog = document.getElementById('new-book');
+const submitBtn = document.getElementById('btn-submit');
 
 const txtTitle = document.getElementById('title');
 const txtAuthor = document.getElementById('author');
@@ -9,14 +10,14 @@ const txtPages = document.getElementById('pages');
 const chkRead = document.getElementById('read');
 
 const listContainer = document.getElementsByClassName('list-container');
+const form = document.getElementById('form');
 
-function Book(id, title, author, pages, read) {
+function Book(title, author, pages, read) {
+    this.id = crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.read = read;
-    let id = crypto.randomUUID();
-    this.id = id;
 }
 
 function addBookToLibrary(book) {
@@ -34,3 +35,20 @@ closeBtn.addEventListener('click', (event) => {
     event.preventDefault();
     newBookDialog.close();
 });
+
+form.addEventListener('submit', (event)=>{
+    event.preventDefault();
+
+    const newBook = new Book(
+        txtTitle.value,
+        txtAuthor.value,
+        txtPages.value,
+        chkRead.checked
+    );
+
+    addBookToLibrary(newBook);
+    displayBooks();
+
+    form.reset();
+    newBookDialog.close()
+})
