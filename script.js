@@ -9,7 +9,7 @@ const txtAuthor = document.getElementById('author');
 const txtPages = document.getElementById('pages');
 const chkRead = document.getElementById('read');
 
-const listContainer = document.getElementsByClassName('list-container');
+const listContainer = document.querySelector('.list-container');
 const form = document.getElementById('form');
 const bookTemplate = document.getElementById('book-card-template');
 
